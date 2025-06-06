@@ -1,4 +1,5 @@
-﻿Imports System.Net
+﻿Imports System.Data.SqlClient
+Imports System.Net
 Imports System.Web.Http
 
 Public Class ValuesController
@@ -11,7 +12,17 @@ Public Class ValuesController
 
     ' GET api/values/5
     Public Function GetValue(ByVal id As Integer) As String
-        Return "value"
+        Dim arr2(), strKey As String, coll As NameValueCollection
+
+        coll = HttpContext.Current.Request.Headers
+        arr2 = coll.GetValues("key636")
+        strKey = arr2(0)
+
+        If strKey = "ivanluis" Then
+            Return "value"
+        Else
+            Return ""
+        End If
     End Function
 
     ' POST api/values
