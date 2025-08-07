@@ -186,6 +186,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.vb" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.vb" />
     <Compile Include="Controllers\ChavesNaMaoController.vb" />
+    <Compile Include="Controllers\forcredController.vb" />
     <Compile Include="Controllers\ZapLeadController.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
@@ -295,6 +296,7 @@
     <Folder Include="Models\" />
     <Folder Include="Properties\" />
     <Folder Include="Views\ChavesNaMao\" />
+    <Folder Include="Views\forcred\" />
     <Folder Include="Views\ZapLead\" />
   </ItemGroup>
   <PropertyGroup>
