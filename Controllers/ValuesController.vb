@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Net
 Imports System.Web.Http
+Imports Newtonsoft.Json.Linq
 
 Public Class ValuesController
     Inherits ApiController
@@ -26,12 +27,12 @@ Public Class ValuesController
     End Function
 
     ' POST api/values
-    Public Sub PostValue(<FromBody()> ByVal value As String)
-
+    Public Sub PostValue(<FromBody()> ByVal value As cxxx)
+        Console.WriteLine(value.nome)
     End Sub
 
     ' PUT api/values/5
-    Public Sub PutValue(ByVal id As Integer, <FromBody()> ByVal value As String)
+    Public Sub PutValue(ByVal id As Integer, <FromBody()> ByVal value As cxxx)
 
     End Sub
 
@@ -39,4 +40,9 @@ Public Class ValuesController
     Public Sub DeleteValue(ByVal id As Integer)
 
     End Sub
+
+    Public Class cxxx
+        Public Property id As Integer
+        Public Property nome As String
+    End Class
 End Class
