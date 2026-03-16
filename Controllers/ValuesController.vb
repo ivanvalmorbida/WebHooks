@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Net
+Imports System.Net.Http
 Imports System.Web.Http
 Imports Newtonsoft.Json.Linq
 
@@ -16,13 +17,15 @@ Public Class ValuesController
         Dim arr2(), strKey As String, coll As NameValueCollection
 
         coll = HttpContext.Current.Request.Headers
-        arr2 = coll.GetValues("key636")
-        strKey = arr2(0)
+        arr2 = coll.GetValues("keyXXX")
+        If Not IsNothing(arr2) Then strKey = arr2(0) Else strKey = ""
 
-        If strKey = "ivanluis" Then
-            Return "value"
+        If strKey = "Ivanluis###" Then
+            Return "ValueX"
         Else
-            Return ""
+            Throw New HttpResponseException(Request.CreateResponse(
+            HttpStatusCode.Unauthorized,
+            "Usuário não autorizado"))
         End If
     End Function
 
