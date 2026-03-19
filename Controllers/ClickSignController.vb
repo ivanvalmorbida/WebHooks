@@ -12,7 +12,7 @@ Namespace Controllers
                 req.Seek(0, System.IO.SeekOrigin.Begin)
                 Dim json As String = New StreamReader(req).ReadToEnd()
                 Dim arquivoWS As StreamWriter
-                arquivoWS = New StreamWriter("C:\Mielina2\clicksign\clicksign" & Now.Ticks & ".txt", True)
+                arquivoWS = New StreamWriter("C:\Mielina2\clicksign\clicksign" & Now.Ticks & ".json", True)
                 arquivoWS.WriteLine(json)
                 arquivoWS.Close()
             Catch ex As Exception
